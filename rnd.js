@@ -2,6 +2,9 @@
 const rnd = (...args) => {
   // just for fun stats - counts how many times the rnd function ran total
   rnd.counter = 1 + (rnd.counter || 0)    // comment this out for performance
+  /* there is a possibility that if rnd.counter is a numeric value equal to 0, then the expression (rnd.counter || 0) will also return 0, and as a result, rnd.counter will not be incremented
+  rnd.counter = 1 + (rnd.counter ?? 0)
+  alternatively, to look only at null or undefined */
 
   const [arg1, arg2, arg3] = args
 
